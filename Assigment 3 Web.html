@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="styles.css">             
+
+<style>
+    table{
+        width: 50%;
+    }
+    th{
+        width: 50%;
+    }
+    input[type=text]{
+        width: 97%;
+    }
+</style>
+
+</head> 
+<body>
+
+    <button style="float: right;" onclick="canprint()">Print My CV</button>
+    <br>
+    <br>
+
+    <form>
+        <table border>
+            <tr>
+               <h3>------------------------(My CV)-------------------------</h3>
+            </tr>
+            <tr>
+               <th>Name:</th>
+               <td><input type="text" name="" value="Raghib Amin Hakawati" onclick="clickss()" id="t1"></td>
+            </tr> 
+            <tr>
+               <th>Education Section:</th>
+               <td><input type="text" name="" value="Networks and Information Security" onmouseenter="enter()" id="t2" onmouseout="out()"></td>
+            </tr> 
+            <tr>
+               <th>University:</th>
+               <td><input type="text" name="" value="An-Najah National University" id="t3"></td>
+            </tr>           
+            <tr>
+               <th>Hobbies</th>
+               <td><input type="text" name="" value="Football game, pubg game, ..." id="t4"></td>
+            </tr>                     
+        </table> <br>
+
+        <img src="Raghib.jpg" style="width: 50%; height: 400px;"><br>
+       
+        <input type="button" name="" value="Print information" onclick="pppp()"><br>
+        <textarea rows="8" cols="87" id="ta"></textarea> 
+
+    </form>
+
+    <script>
+        var x = "0";
+
+        function clickss() {
+            alert('Welcome, please let me know if you have any questions');
+        }
+
+        function enter() {
+            document.getElementById('t2').style = "color: red;";
+        }
+
+        function out() {
+            document.getElementById('t2').style = "color: black;";
+        }
+
+        function canprint() {
+            x = 1;
+        }
+
+        function pppp() {
+            
+            if(x == "1"){
+                var t1 = document.getElementById('t1').value;
+                var t2 = document.getElementById('t2').value;
+                var t3 = document.getElementById('t3').value;
+                var t4 = document.getElementById('t4').value;
+
+                document.getElementById('ta').value = "Name: "+t1+"\n"+
+                                                        "Education: "+t2+"\n"+
+                                                        "University: "+t3+"\n"+
+                                                        "Hobbies: "+t4;
+            }  
+            else{
+                document.getElementById('ta').value = "Cannot able to print, click on (Print My CV) button to show information";
+            }                                          
+        }
+    </script>
+</body>
+</html>
